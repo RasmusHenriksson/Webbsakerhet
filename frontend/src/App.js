@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import CommentsForm from './components/CommentsForm'
+import Comments from './components/Comments'
+const App = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [comments, setComments] = useState([
+  {
+    id: 1,
+    title: 'title1',
+    body: 'hehehe',
+    imgUrl: 'https://webbtelescope.org/files/live/sites/webb/files/home/news/first-images/gallery/_images/STScI-J-HeroERO-Gallery-Fallback-image-1920x1080.jpg',
+  }
+])
+
+    return (
+    <div className="container">
+      <CommentsForm />
+      <Comments comments={comments} />
     </div>
-  );
+  )
 }
+
 
 export default App;
