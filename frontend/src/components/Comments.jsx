@@ -2,6 +2,7 @@ import React from "react";
 import Comment from "./Comment";
 
 const Comments = ({ comments }) => {
+  console.log(comments)
   return (
     <>
       <h2 className="sub-title">Comments</h2>

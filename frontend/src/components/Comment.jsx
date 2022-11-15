@@ -1,4 +1,5 @@
 import React from "react";
+import DOMPurify from "dompurify";
 
 const Comment = ({ comment }) => {
   return (
@@ -9,7 +10,9 @@ const Comment = ({ comment }) => {
         </div>
         <h2>{comment.title}</h2>
       </div>
-      <div className="comment-body">{comment.body}</div>
+      <div className="comment-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.body )}}>
+        
+      </div>
     </div>
   );
 };

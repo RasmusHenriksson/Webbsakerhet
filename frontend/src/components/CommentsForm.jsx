@@ -1,9 +1,10 @@
 import { useState } from "react";
+import DOMPurify from "dompurify";
 
 const CommentsForm = ({ addComment }) => {
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    title: "asd",
+    title: "",
     body: "",
     imgUrl: "",
   });
@@ -25,7 +26,9 @@ const CommentsForm = ({ addComment }) => {
 
     const comment = {
       id: Date.now().toString(),
-      ...formData,
+      title: DOMPurify.sanitize(formData.title),
+      body: DOMPurify.sanitize(formData.body),
+      imgUrl: DOMPurify.sanitize(formData.imgUrl)
     };
     addComment(comment);
     e.target.reset();
