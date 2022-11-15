@@ -24,11 +24,12 @@ const CommentsForm = ({ addComment }) => {
     }
     setError("");
 
+    // WHITELIST, tillåter endast bold och kursiv text
     const comment = {
       id: Date.now().toString(),
-      title: DOMPurify.sanitize(formData.title),
-      body: DOMPurify.sanitize(formData.body),
-      imgUrl: DOMPurify.sanitize(formData.imgUrl)
+      title: DOMPurify.sanitize(formData.title,{ALLOWED_TAGS: ['b', 'i']}),
+      body: DOMPurify.sanitize(formData.body,{ALLOWED_TAGS: ['b', 'i']}),
+      imgUrl: DOMPurify.sanitize(formData.imgUrl,{ALLOWED_TAGS: ['b', 'i']}),
     };
     addComment(comment);
     e.target.reset();
