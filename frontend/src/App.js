@@ -12,9 +12,15 @@ const App = () => {
     },
   ]);
 
+  const addComment = (comment) => {
+    setComments(state => [...state, comment])
+
+    
+  }
+
   return (
     <div className="container">
-      <CommentsForm />
+      <CommentsForm addComment={addComment} />
       <Comments comments={comments} />
     </div>
   );
