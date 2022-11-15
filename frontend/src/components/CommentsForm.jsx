@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 const CommentsForm = () => {
-
-const [error, setError] = useState('error message')
+  const [error, setError] = useState("error message");
 
   return (
     <form className="comments-form">
@@ -21,7 +20,7 @@ const [error, setError] = useState('error message')
       <p className="error-message">{error}</p>
       <button className="button">Submit Comment</button>
     </form>
-  )
-}
+  );
+};
 
-export default CommentsForm
+export default CommentsForm;
