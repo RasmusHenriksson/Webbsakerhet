@@ -6,7 +6,7 @@ const Comment = ({ comment }) => {
     <div className="comment">
       <div className="comment-header">
         <div className="img-container">
-          <img src={comment.imgUrl} />
+          <img src={comment.imgUrl} alt="" />
         </div>
         <h2>{comment.title}</h2>
       </div>

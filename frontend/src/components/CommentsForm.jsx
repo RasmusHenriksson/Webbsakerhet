@@ -27,9 +27,9 @@ const CommentsForm = ({ addComment }) => {
     // WHITELIST, tillåter endast bold och kursiv text
     const comment = {
       id: Date.now().toString(),
-      title: DOMPurify.sanitize(formData.title,{ALLOWED_TAGS: ['b', 'i']}),
-      body: DOMPurify.sanitize(formData.body,{ALLOWED_TAGS: ['b', 'i']}),
-      imgUrl: DOMPurify.sanitize(formData.imgUrl,{ALLOWED_TAGS: ['b', 'i']}),
+      title: DOMPurify.sanitize(formData.title, { ALLOWED_TAGS: ["b", "i"] }),
+      body: DOMPurify.sanitize(formData.body, { ALLOWED_TAGS: ["b", "i"] }),
+      imgUrl: DOMPurify.sanitize(formData.imgUrl, { ALLOWED_TAGS: ["b", "i"] }),
     };
     addComment(comment);
     e.target.reset();
@@ -38,11 +38,15 @@ const CommentsForm = ({ addComment }) => {
   return (
     <form className="comments-form" onSubmit={handleSubmit}>
       <div className="input-group">
-        <label htmlFor="title">Comments Title</label>
+        <label id="your-title" htmlFor="title">
+          Comments Title
+        </label>
         <input name="title" type=" text" id="title" onChange={handleChange} />
       </div>
       <div className="input-group">
-        <label htmlFor="comment">Your Comment</label>
+        <label id="your-comment" htmlFor="comment">
+          Your Comment
+        </label>
         <textarea
           name="body"
           id="comment"
@@ -52,7 +56,9 @@ const CommentsForm = ({ addComment }) => {
         ></textarea>
       </div>
       <div className="input-group">
-        <label htmlFor="title">Image Url</label>
+        <label id="your-img" htmlFor="title">
+          Image Url
+        </label>
         <input name="imgUrl" type=" text" id="imgUrl" onChange={handleChange} />
       </div>
       <p className="error-message">{error}</p>

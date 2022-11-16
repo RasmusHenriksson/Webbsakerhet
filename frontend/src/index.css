@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,34 +6,45 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #cae3ff;
-  padding-top: 30px;
+  font-family: "Roboto Mono", monospace;
+  background-color: #FFAB52;
+  
 }
 
 .comments-form {
   height: 100%;
   margin: auto;
   width: 50%;
-  background-color: #F1F1F1;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: #f1f1f1;
+  padding: 16px;
+  border-radius: 16px;
   box-shadow: 3px 3px 9px black;
+  margin-top: 30px;
 }
 .comment {
   margin: auto;
   width: 50%;
-  background-color: #F1F1F1;
-  padding: 1rem;
-  border-radius: 1rem;
+  background-color: #f1f1f1;
+  padding: 16px;
+  border-radius: 16px;
   box-shadow: 3px 3px 9px black;
 }
 
 .input-group {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
+  
+}
+.input-group #your-comment {
+  padding-bottom: 8px;
 }
 
+.input-group #your-title {
+  padding-bottom: 8px;
+}
+
+.input-group #your-img {
+  padding-bottom: 8px;
+}
 .input-group label,
 .input-group input,
 .input-group textarea {
@@ -42,16 +54,16 @@ body {
 
 input-group label {
   font-weight: bold;
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-size: 17px;
 }
 
 .input-group input,
 .input-group textarea {
-  border-radius: .5rem;
-  border: 1px solid gray;
-  padding: .5rem;
-  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ecdcfe;
+  padding: 8px;
+  font-size: 16px;
 }
 input-group textarea {
   resize: vertical;
@@ -60,36 +72,35 @@ input-group textarea {
 .input-group input:focus,
 .input-group textarea:focus {
   outline: none;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px #cda1ff;
 }
 
 .error-message {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   color: firebrick;
-  font-size: 1.1rem;
+  font-size: 17px;
   font-weight: bold;
 }
 
+/* USING EM FOR BUTTONS */
 .button {
-  padding: .7em 2.5em;
+  padding: 0.7em 2.5em;
   font-weight: bold;
-  font-size: 1rem;
-  border-radius: .5em;
+  font-size: 16px;
+  border-radius: 0.5em;
   border: 0;
-  background-color: green;
+  background: linear-gradient(-60deg, rgb(182, 79, 211) 33%, #60289d 50%);
   color: white;
   cursor: pointer;
 }
 
-
-
 .sub-title {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 32px;
 }
 
 .comment {
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 .img-container {
   width: 30%;
@@ -100,7 +111,7 @@ img {
   object-fit: cover;
 }
 .comment-header {
-  display:flex;
+  display: flex;
 }
 
 .comment-header h2 {
@@ -110,7 +121,55 @@ img {
 }
 
 .comment-body {
-  border-top: 1px solid black;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  border-top: 1px solid #c591ff;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------          NAVBAR CSS            --------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  background-color: #60289d;
+  
+}
+.navbar-nav {
+  list-style: none;
+  gap: 32px;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  display: inline-block;
+}
+.nav-link:hover {
+  background-color: black;
+}
+.nav-link:nth-child(1) {
+  margin-left: -16px;
+}
+.nav.link.active {
+  text-decoration: underline;
+}
+.login-btn {
+  padding: .6em 3em;
+  border: 0;
+  border-radius: .6em;
+  text-transform: uppercase;
+  background-color: #60289d;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-btn:hover {
+  background-color: #c591ff;
+}
+
+.login-btn:active {
+  background-color: #1b0337;
 }

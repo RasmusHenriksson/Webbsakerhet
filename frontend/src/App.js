@@ -1,29 +1,26 @@
 import { useState } from "react";
-import CommentsForm from "./components/CommentsForm";
-import Comments from "./components/Comments";
+import Navbar from "./components/Navbar";
+import { Routes, Route } from 'react-router-dom';
+import Home from "./Views/Home";
+import Profile from "./Views/Profile";
+import Blogg from "./Views/Blogg";
+
+
+
 const App = () => {
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      title: "title1",
-      body: "hehehe",
-      imgUrl:
-        "https://webbtelescope.org/files/live/sites/webb/files/home/news/first-images/gallery/_images/STScI-J-HeroERO-Gallery-Fallback-image-1920x1080.jpg",
-    },
-  ]);
-
-  const addComment = (comment) => {
-    setComments(state => [...state, comment])
-
-    
-  }
-
   return (
-    <div className="container">
-      <CommentsForm addComment={addComment} />
-      <Comments comments={comments} />
-    </div>
-  );
-};
+    <>
+    <Navbar />
+    
 
-export default App;
+      <Routes>
+        <Route path="/" element={ <Home /> }/>
+        <Route path="/profile" element={ <Profile /> }/>
+        <Route path="/blogg" element={ <Blogg /> } />
+      </Routes>
+    
+    </>
+  )
+}
+
+export default App
