@@ -32,7 +32,7 @@ const CommentsForm = ({ addComment }) => {
       imgUrl: DOMPurify.sanitize(formData.imgUrl, { ALLOWED_TAGS: ["b", "i"] }),
     };
     addComment(comment);
-    e.target.reset();
+
   };
 
   return (

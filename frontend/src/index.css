@@ -7,8 +7,7 @@
 
 body {
   font-family: "Roboto Mono", monospace;
-  background-color: #FFAB52;
-  
+  background-color: #ffab52;
 }
 
 .comments-form {
@@ -32,7 +31,6 @@ body {
 
 .input-group {
   margin-bottom: 16px;
-  
 }
 .input-group #your-comment {
   padding-bottom: 8px;
@@ -133,10 +131,10 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 30px;
 }
 .navbar {
-  background-color: #60289d;
-  
+  background-color: #7997af;
 }
 .navbar-nav {
   list-style: none;
@@ -149,7 +147,7 @@ img {
   display: inline-block;
 }
 .nav-link:hover {
-  background-color: black;
+  background-color: #6b869c;
 }
 .nav-link:nth-child(1) {
   margin-left: -16px;
@@ -158,16 +156,17 @@ img {
   text-decoration: underline;
 }
 .login-btn {
-  padding: .6em 3em;
+  margin-right: 30px;
   border: 0;
-  border-radius: .6em;
+  height: 100%;
   text-transform: uppercase;
-  background-color: #60289d;
+  background-color: #7997af;
   font-weight: 600;
+  color: white;
   cursor: pointer;
 }
 .login-btn:hover {
-  background-color: #c591ff;
+  background-color: #6b869c;
 }
 
 .login-btn:active {
@@ -175,14 +174,14 @@ img {
 }
 
 .avatar-dropdown {
-position: relative;
+  position: relative;
 }
 .avatar {
-margin-right: 15px;
-border-radius: 50%;
-overflow: hidden;
-height: 35px;
-cursor: pointer;
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 35px;
+  cursor: pointer;
 }
 img {
   width: 100%;
@@ -196,7 +195,7 @@ img {
   padding: 8px;
   box-shadow: 2px 2px 6px black;
   border-radius: 4px;
-  right:0;
+  right: 0;
   bottom: -8px;
   transform: translateY(100%);
 }
@@ -213,9 +212,41 @@ img {
 }
 
 .logout-btn:hover {
-background-color: red;
+  background-color: red;
 }
 
 .logout-btn:active {
-background-color: yellow;
+  background-color: yellow;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------          LOADER CSS            --------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.loader {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.356);
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  width: 75px;
+  aspect-ratio: 1;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  border-top-color: green;
+  border-bottom-color: red;
+  animation: spin 700ms infinite linear;
+}
+
+@keyframes spin {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
 }

@@ -12,7 +12,6 @@ const Navbar = () => {
         <div className="container flex">
             <ul className="flex navbar-nav">
                 <li><NavLink className="nav-link" to="/" end>Home</NavLink></li>
-                <li><NavLink className="nav-link" to="/profile" >Profile</NavLink></li>
                 <li><NavLink className="nav-link" to="/blogg" >Blogg</NavLink></li>
 
             </ul>
