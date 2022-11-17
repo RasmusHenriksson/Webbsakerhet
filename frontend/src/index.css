@@ -7,7 +7,7 @@
 
 body {
   font-family: "Roboto Mono", monospace;
-  background-color: #ffab52;
+  background-color: #d9f1ff;
 }
 
 .comments-form {
@@ -59,7 +59,7 @@ input-group label {
 .input-group input,
 .input-group textarea {
   border-radius: 8px;
-  border: 1px solid #ecdcfe;
+  border: 1px solid #99c0e1;
   padding: 8px;
   font-size: 16px;
 }
@@ -70,7 +70,7 @@ input-group textarea {
 .input-group input:focus,
 .input-group textarea:focus {
   outline: none;
-  box-shadow: 0 0 5px #cda1ff;
+  box-shadow: 0 0 5px #7997af;
 }
 
 .error-message {
@@ -83,11 +83,11 @@ input-group textarea {
 /* USING EM FOR BUTTONS */
 .button {
   padding: 0.7em 2.5em;
-  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
   font-size: 16px;
   border-radius: 0.5em;
   border: 0;
-  background: linear-gradient(-60deg, rgb(182, 79, 211) 33%, #60289d 50%);
+  background-color: #7997af;
   color: white;
   cursor: pointer;
 }
@@ -119,7 +119,7 @@ img {
 }
 
 .comment-body {
-  border-top: 1px solid #c591ff;
+  border-top: 1px solid #7997af;
   margin-top: 16px;
   padding-top: 16px;
 }
@@ -139,6 +139,7 @@ img {
 .navbar-nav {
   list-style: none;
   gap: 32px;
+  font-size: 14px;
 }
 .nav-link {
   text-decoration: none;
@@ -154,24 +155,21 @@ img {
 }
 .nav.link.active {
   text-decoration: underline;
+  color: white;
 }
 .login-btn {
   margin-right: 30px;
   border: 0;
-  height: 100%;
-  text-transform: uppercase;
+  padding: 16px;
   background-color: #7997af;
-  font-weight: 600;
   color: white;
   cursor: pointer;
+  font-family: "Roboto Mono", monospace;
 }
 .login-btn:hover {
   background-color: #6b869c;
 }
 
-.login-btn:active {
-  background-color: #1b0337;
-}
 
 .avatar-dropdown {
   position: relative;
@@ -204,7 +202,7 @@ img {
   padding: 8px;
   border: 0;
   border-radius: 8px;
-  background-color: darkblue;
+  background-color: #7997af;
   color: white;
   text-transform: uppercase;
   font-weight: 600px;
@@ -212,11 +210,11 @@ img {
 }
 
 .logout-btn:hover {
-  background-color: red;
+  background-color: #3e4e5a;
 }
 
 .logout-btn:active {
-  background-color: yellow;
+  background-color: #5fa6e0;
 }
 
 /* --------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -237,8 +235,8 @@ img {
   aspect-ratio: 1;
   border: 10px solid transparent;
   border-radius: 50%;
-  border-top-color: green;
-  border-bottom-color: red;
+  border-top-color: rgb(24, 131, 197);
+  border-bottom-color: rgb(13, 112, 194);
   animation: spin 700ms infinite linear;
 }
 
