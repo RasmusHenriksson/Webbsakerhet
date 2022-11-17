@@ -5,7 +5,7 @@ const Dropdown = () => {
     const { logout } = useAuth0();
   return (
     <div className="dropdown">
-      <button onClick={() => logout({ returnTo: window.location.orogin})} className="logout-btn">Logout</button>
+      <button onClick={() => logout({ returnTo: window.location.origin})} className="logout-btn">Logout</button>
     </div>
   );
 };

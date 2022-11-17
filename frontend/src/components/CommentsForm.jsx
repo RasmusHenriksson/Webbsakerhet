@@ -19,7 +19,7 @@ const CommentsForm = ({ addComment }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.title || !formData.body || !formData.imgUrl) {
-      setError("Please enter all the fields!");
+      setError("Please enter all the required fields!");
       return;
     }
     setError("");
@@ -32,6 +32,7 @@ const CommentsForm = ({ addComment }) => {
       imgUrl: DOMPurify.sanitize(formData.imgUrl, { ALLOWED_TAGS: ["b", "i"] }),
     };
     addComment(comment);
+    e.target.reset();
 
   };
 
