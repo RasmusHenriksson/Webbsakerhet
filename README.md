@@ -16,7 +16,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npm install`
 (downloads the proper dependencies for this repository)
 
-in the backend-API, create a new database table and pass in its connection string inside appsettings
+in the backend-API, create a new database table and pass in its connection string inside `SQL` in appsettings.
+You also have to insert your Connectionstring from Azure's key vault inside the `StorageAccount` section.
 run the following commands when it's done
 `add-migration '(name)'`
 `update-database`
@@ -31,3 +32,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+:sparkles: To see the shared images, visit your azure resource page.

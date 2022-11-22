@@ -11,8 +11,8 @@ using backendAPI.Data;
 namespace backendAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221122102916_Initerere")]
-    partial class Initerere
+    [Migration("20221122135824_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

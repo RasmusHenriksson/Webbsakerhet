@@ -1,5 +1,3 @@
-C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\appsettings.json
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\backendAPI.exe
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\backendAPI.deps.json
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\backendAPI.runtimeconfig.json
@@ -75,3 +73,8 @@ C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\obj\Debug\net7.0
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\obj\Debug\net7.0\backendAPI.pdb
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\obj\Debug\net7.0\backendAPI.genruntimeconfig.cache
 C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\obj\Debug\net7.0\ref\backendAPI.dll
+C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\Azure.Storage.Blobs.dll
+C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\Azure.Storage.Common.dll
+C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\System.IO.Hashing.dll
+C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Ralle\Desktop\SKOLA\Webbsakerhet\backendAPI\backendAPI\bin\Debug\net7.0\appsettings.json

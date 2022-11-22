@@ -13,6 +13,7 @@ const Navbar = () => {
             <ul className="flex navbar-nav">
                 <li><NavLink className="nav-link" to="/" end>Home</NavLink></li>
                 <li><NavLink className="nav-link" to="/blogg" >Blogg</NavLink></li>
+                <li><NavLink className="nav-link" to="/Images" >Images</NavLink></li>
 
             </ul>
             {
