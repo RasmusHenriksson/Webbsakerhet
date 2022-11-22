@@ -6,7 +6,6 @@ We also use Entity Framework as a database cloud provider.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## TECHNOLOGIES
-
 - React
 - HTML
 - CSS
@@ -17,9 +16,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npm install`
 (downloads the proper dependencies for this repository)
 
+in the backend-API, create a new database table and pass in its connection string inside appsettings
+run the following commands when it's done
+`add-migration '(name)'`
+`update-database`
+
 ## SETUP
 
-In the project directory, you can run:
+Run the backend-API and wait for it to load, simultaneously in the vscode project directory, you can run:
 
 `npm start`
 Which runs the app in the development mode.\
