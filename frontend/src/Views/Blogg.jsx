@@ -1,47 +1,96 @@
-import React from 'react'
-import CommentsForm from '../components/CommentsForm'
-import { useState } from 'react';
-import Comments from '../components/Comments'
-import Loading from '../components/Loading';
-import { useAuth0, withAuthenticationRequired, } from '@auth0/auth0-react';
-
-
+import { useState } from "react";
+import DOMPurify from "dompurify";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
 
 const Blogg = () => {
-  const { isAuthenticated, isLoading } = useAuth0();
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      title: "Internship",
-      body: "<i> This is the first few weeks of my internship at google and I wish to tell all of you how grateful I am for this opportunity that i am now able to share with you all!",
-      imgUrl:
-        "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Chrome__logo.max-500x500.png",
-    },
-    {
-      id: 1,
-      title: "Todays weather",
-      body: "<b> The weather today is outstanding! The sun is shining and the temperature keeps rising.</b> <br> Hope you all have a wonderful day out in the sun!",
-      imgUrl:"https://play-lh.googleusercontent.com/pCQw51XRP4UPr-FCYDjvNnEpFa0HDGJjjLDldN3rmw4KkwhqPu0PZXE8EopmAxzH9mQ",
-    },
-  ]);
+  const [error, setError] = useState("");
+  const navigate = useNavigate()
+  const [formData, setFormData] = useState({
+    title: "",
+    body: "",
+    imgUrl: "",
+  });
 
-  const addComment = (comment) => {
-    setComments(state => [...state, comment])
+  const handleChange = (e) => {
+    setFormData((data) => ({
+      ...data,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.title || !formData.body || !formData.imgUrl) {
+      setError("Please enter all the required fields!");
+      return;
+    }
+    setError("");
 
     
-   }
-  if (isLoading) {
-    return <Loading />
-  }
+    // WHITELIST, title allows only bold and body allows bold and italic text
+    const post = {
+      title: DOMPurify.sanitize(formData.title, { ALLOWED_TAGS: ['b'] }),
+      body: DOMPurify.sanitize(formData.body, { ALLOWED_TAGS: ['b', 'i'] }),
+      imgUrl: DOMPurify.sanitize(formData.imgUrl, { ALLOWED_TAGS: ['b', 'i'] })
+    }
+    try {
+      const token = localStorage.getItem('accessToken')
+      
+      const res = await fetch('https://localhost:7272/api/Posts', {
+        method: 'POST',
+        body: JSON.stringify(post),
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `Bearer ${token}`
+        }
+      })
+      if(!res.ok) {
+        throw new Error(res.status, res.statusText)
+      }
+      setError(false)
+      navigate('/')
+      
+    } catch (err) {
+      console.log(err.message)
+      setError(true)
+    }
+    
+    console.log(post)
+
+  };
 
   return (
-    <div className="container">{isAuthenticated && (
-      <CommentsForm addComment={addComment} />
-    )}
-      <Comments comments={comments} />
-    </div>
-  )
-}
+    <form className="comments-form" onSubmit={handleSubmit}>
+      <div className="input-group">
+        <label id="your-title"  >
+          Comments Title
+        </label>
+        <input name="title" type="text" id="title" onChange={handleChange} />
+      </div>
+
+      <div className="input-group">
+        <label id="your-comment" >
+          Your Comment
+        </label>
+        <textarea name="body" id="comment" cols="30" rows="10" onChange={handleChange}
+        ></textarea>
+
+      </div>
+      <div className="input-group">
+        <label id="your-img" >
+          Image Url
+        </label>
+        <input name="imgUrl" type="text" id="imgUrl" onChange={handleChange} />
+      </div>
+      <p className="error-message">{error}</p>
+      <button className="button">Submit Comment</button>
+    </form>
+    
+  );
+};
+
 
 export default withAuthenticationRequired(Blogg, {
   onRedirecting: () => <Loading />

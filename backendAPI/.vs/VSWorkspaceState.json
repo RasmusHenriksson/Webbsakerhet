@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backendAPI",
+    "\\backendAPI\\Controllers"
   ],
   "SelectedNode": "\\backendAPI.sln",
   "PreviewInSolutionExplorer": false

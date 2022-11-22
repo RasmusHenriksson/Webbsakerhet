@@ -10,5 +10,7 @@ namespace backendAPI.Models
         public string Title { get; set; } = null!;
         [Required]
         public string Body { get; set; } = null!;
+
+        public string imgUrl { get; set; } = null!;
     }
 }

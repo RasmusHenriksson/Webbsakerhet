@@ -30,10 +30,11 @@ namespace backendAPI.Controllers
                 {
                     Title = post.Title,
                     Body = post.Body,
+                    imgUrl = post.imgUrl
                 };
                 _context.Posts.Add(postEntity);
                  await _context.SaveChangesAsync();
-                return new CreatedResult("", postEntity);
+                return new CreatedResult("https://localhost:7272/api/Posts", postEntity);
             }
             catch (Exception ex) 
             { 

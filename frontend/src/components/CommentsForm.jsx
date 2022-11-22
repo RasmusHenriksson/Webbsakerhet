@@ -65,6 +65,7 @@ const CommentsForm = ({ addComment }) => {
       <p className="error-message">{error}</p>
       <button className="button">Submit Comment</button>
     </form>
+    
   );
 };
 

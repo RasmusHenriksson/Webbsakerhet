@@ -5,7 +5,7 @@
 namespace backendAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class Initerere : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
