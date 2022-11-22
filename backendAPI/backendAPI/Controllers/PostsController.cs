@@ -1,5 +1,6 @@
 ﻿using backendAPI.Data;
 using backendAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace backendAPI.Controllers
             return new OkObjectResult(await _context.Posts.ToListAsync());
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreatePost(PostRequest post)
         {
             try
