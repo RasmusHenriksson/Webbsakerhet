@@ -33,4 +33,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-:sparkles: To see the shared images, visit your azure resource page.
+:sparkles: To see the shared images, visit your microsoft azure resource page.
