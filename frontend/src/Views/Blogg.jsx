@@ -22,6 +22,11 @@ const Blogg = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const regex = /(http(s?):)|([/|.|\w|\s])*\.(?:jpg|png)/;
+    if (!regex.test(formData.imgUrl)) {
+      setError("The image you uploaded must be either jpg or png");
+      return;
+    }
     if (!formData.title || !formData.body || !formData.imgUrl) {
       setError("Please enter all the required fields!");
       return;
