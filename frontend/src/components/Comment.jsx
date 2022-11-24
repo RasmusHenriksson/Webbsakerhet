@@ -8,10 +8,9 @@ const Comment = ({ comment }) => {
         <div className="img-container">
           <img src={comment.imgUrl} alt="" />
         </div>
-        <h2>{comment.title}</h2>
+        <div className="comment-title" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.title )}}></div>
       </div>
       <div className="comment-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment.body )}}>
-        
       </div>
     </div>
   );
