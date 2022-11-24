@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.Web;
 
 namespace backendAPI.Controllers
 {
@@ -13,6 +15,7 @@ namespace backendAPI.Controllers
     public class PostsController : ControllerBase
     {
         private readonly DataContext _context;
+        private string[] _tagsAllowed = new string[] { "<b>", "</b>", "<i>", "</i>"};
         public PostsController(DataContext context)
         {
             _context = context;
@@ -20,7 +23,21 @@ namespace backendAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPosts()
         {
-            return new OkObjectResult(await _context.Posts.ToListAsync());
+            List<PostEntity> Comments = await _context.Posts.ToListAsync();
+            foreach(var comment in Comments)
+            {
+                comment.Body = HttpUtility.HtmlEncode(comment.Body);
+            }
+
+            foreach(var tag in _tagsAllowed)
+            {
+                var encodedTag = HttpUtility.HtmlEncode(tag);
+                foreach(var comment in Comments)
+                {
+                    comment.Body = comment.Body.Replace(encodedTag, tag);
+                }
+            }
+            return Ok(Comments);
         }
         [HttpPost]
         [Authorize]
@@ -34,6 +51,17 @@ namespace backendAPI.Controllers
                     Body = post.Body,
                     imgUrl = post.imgUrl
                 };
+
+              string encodedContent = HttpUtility.HtmlEncode(postEntity.Body);
+
+                foreach(var tag in _tagsAllowed)
+                {
+                    var encodedTag = HttpUtility.HtmlEncode(tag);
+                    encodedContent = encodedContent.Replace(encodedTag, tag);
+                }
+
+                postEntity.Body = encodedContent;
+
                 _context.Posts.Add(postEntity);
                  await _context.SaveChangesAsync();
                 return new CreatedResult("https://localhost:7272/api/Posts", postEntity);
