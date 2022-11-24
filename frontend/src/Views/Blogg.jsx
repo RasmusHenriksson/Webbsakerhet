@@ -36,7 +36,7 @@ const Blogg = () => {
     
     // WHITELIST, title allows only bold and body allows bold and italic text
     const post = {
-      title: DOMPurify.sanitize(formData.title, { ALLOWED_TAGS: ['b'] }),
+      title: DOMPurify.sanitize(formData.title, { ALLOWED_TAGS: ['b', 'i'] }),
       body: DOMPurify.sanitize(formData.body, { ALLOWED_TAGS: ['b', 'i'] }),
       imgUrl: DOMPurify.sanitize(formData.imgUrl, { ALLOWED_TAGS: ['b', 'i'] })
     }
